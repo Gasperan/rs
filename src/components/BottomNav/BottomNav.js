@@ -35,7 +35,7 @@ class BottomNav extends React.Component {
       >
         <BottomNavigationAction label="Avisos" icon={<RestoreIcon />} />
         <BottomNavigationAction label="Reservas" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Caca" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="Perfil" icon={<LocationOnIcon />} />
       </BottomNavigation>
     );
   }

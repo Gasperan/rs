@@ -1,31 +1,37 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import IconButton from '@material-ui/core/IconButton'
+import AccountCircle from '@material-ui/icons/AccountCircle'
+import Android from '@material-ui/icons/Android'
+import Fingerprint from '@material-ui/icons/Fingerprint'
 
 class MyAppBar extends Component{
     static propTypes = {
         classes: PropTypes.object.isRequired,
-        bla: PropTypes.string.isRequired
+        title: PropTypes.string.isRequired
     }
 
     render() {
-        const { classes, bla } = this.props
+        const { classes, title } = this.props
         return <div className={classes.root}>
               <AppBar position="static">
                 <Toolbar>
-                  <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                    <MenuIcon />
-                  </IconButton>
                   <Typography variant="h6" color="inherit" className={classes.grow}>
-                    {bla}
+                    {title}
                   </Typography>
-                  <Button color="inherit">Login</Button>
+                  <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                    <AccountCircle />
+                  </IconButton>
+                  <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                    <Fingerprint />
+                  </IconButton>
+                  <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                    <Android />
+                  </IconButton>
                 </Toolbar>
               </AppBar>
             </div>

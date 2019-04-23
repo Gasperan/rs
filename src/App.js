@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 import BottomNav from './components/BottomNav/BottomNav'
 import './App.css';
 import GridList from './components/GridList/GridList'
+import MyAppBar from './components/AppBar/MyAppBar'
 
 export default class App extends Component {
   render() {
     return <div style={styles.bla}>
-      <div style={styles.text}>
-        fdsfdfdsfdfdsfdfdsfdfdsfdfdsfdfdsfdfdsfdfdsfdfdsfd
-        fdsfdfdsfdfdsfdfdsfdfdsfdfdsfdfdsfdfdsfd
-        fdsfdfdsfdfdsfdfdsfdfdsfdfdsfdfdsfdfdsfd
-        fdsfdfdsfdfdsfdfdsfdfdsfdfdsfdfdsfd
-        fdsfdfdsfdfdsfdfdsfdfdsfdfdsfd
-      </div>
+      <MyAppBar title='Recetando Sonrisas' style={styles.text} />
       <GridList style={styles.text2} />
       <BottomNav style={styles.bottom} />
     </div>
