@@ -5,7 +5,7 @@ export const NotReadyYet = (props) => {
     return (
         <div>
             <Typography variant="h3" color="inherit">
-                {props.text}
+                esto aun no está listo
             </Typography>
         </div>
     )
