@@ -13,6 +13,7 @@ import image4 from './assets/burgers.jpg'
 import image5 from './assets/camera.jpg'
 import image6 from './assets/hats.jpg'
 import image7 from './assets/morning.jpg'
+import * as navigator from '../../navigation/navigator'
 
 /* * The example data is structured as follows:
  *
@@ -67,56 +68,65 @@ const tileData = [
         title: 'Asistente Social',
         author: 'author',
     },
-
 ]
 
-function TitlebarGridList(props) {
-  const { classes } = props;
-
-  return (
-    <div className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">December</ListSubheader>
-        </GridListTile>
-        {tileData.map(tile => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              subtitle={<span>by: {tile.author}</span>}
-              actionIcon={
-                <IconButton className={classes.icon}>
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
-          </GridListTile>
-        ))}
-      </GridList>
-    </div>
-  );
+const navigateToHome = () => {
+    navigator.navigateToHome()
 }
 
-const styles = theme => ({
+function TitlebarGridList(props) {
+    const { classes } = props
+
+    return (
+        <div className={classes.root}>
+            <GridList cellHeight={180} className={classes.gridList}>
+                <GridListTile
+                    key="Subheader"
+                    cols={2}
+                    style={{ height: 'auto' }}
+                >
+                    <ListSubheader component="div">December</ListSubheader>
+                </GridListTile>
+                {tileData.map((tile) => (
+                    <GridListTile key={tile.img}>
+                        <div onClick={navigateToHome}>
+                            <img src={tile.img} alt={tile.title} />
+                            <GridListTileBar
+                                title={tile.title}
+                                subtitle={<span>by: {tile.author}</span>}
+                                actionIcon={
+                                    <IconButton className={classes.icon}>
+                                        <InfoIcon />
+                                    </IconButton>
+                                }
+                            />
+                        </div>
+                    </GridListTile>
+                ))}
+            </GridList>
+        </div>
+    )
+}
+
+const styles = (theme) => ({
     root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
-      overflow: 'hidden',
-      backgroundColor: theme.palette.background.paper,
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        overflow: 'hidden',
+        backgroundColor: theme.palette.background.paper,
     },
     gridList: {
-      width: '100%',
-      height: '100%',
+        width: '100%',
+        height: '100%',
     },
     icon: {
-      color: 'rgba(255, 255, 255, 0.54)',
+        color: 'rgba(255, 255, 255, 0.54)',
     },
-  });
+})
 
 TitlebarGridList.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+    classes: PropTypes.object.isRequired,
+}
 
-export default withStyles(styles)(TitlebarGridList);
+export default withStyles(styles)(TitlebarGridList)
