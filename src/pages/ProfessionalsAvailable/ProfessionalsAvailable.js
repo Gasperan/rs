@@ -13,19 +13,31 @@ const data = {
         {
             img: image5,
             name: 'Carlos Albornoz',
-            title: 'Asistente Social',
-            author: 'author',
+            title: 'Carlos Albornoz',
+            author: '12.435.654-8',
         },
         {
             img: image5,
             name: 'Yanis',
-            title: 'Asistente Social',
+            title: 'Yanis',
+            author: 'author',
+        },
+        {
+            img: image5,
+            name: 'medicine',
+            title: 'Sara Piña',
             author: 'author',
         },
         {
             img: image5,
             name: 'medicine',
             title: 'Asistente Social',
+            author: 'author',
+        },
+        {
+            img: image5,
+            name: 'medicine',
+            title: 'Sara Piña',
             author: 'author',
         },
         {
@@ -93,6 +105,5 @@ const data = {
 export const ProfessionalsAvailable = (props) => {
     let location = useLocation()
     const professionName = location.pathname.substring(1)
-    console.log(professionName)
     return <GridList data={data[professionName]} title={professionName} />
 }

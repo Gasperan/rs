@@ -19,7 +19,7 @@ export default class App extends Component {
                         title="Sistema de reservas - Recetando Sonrisas"
                         style={styles.text}
                     />
-                    <div style={styles.text2}>
+                    <div style={styles.main}>
                         <Route
                             path="/reservations"
                             component={AvailableServices}
@@ -56,7 +56,7 @@ const styles = {
     text: {
         display: 'flex',
     },
-    text2: {
+    main: {
         display: 'flex',
         flexGrow: 1,
         overflowX: 'scroll',

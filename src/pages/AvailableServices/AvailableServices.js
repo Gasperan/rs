@@ -3,19 +3,21 @@ import image from '../../assets/bike.jpg'
 import image3 from '../../assets/breakfast.jpg'
 import image4 from '../../assets/burgers.jpg'
 import image5 from '../../assets/camera.jpg'
+import medicine from '../../assets/medicine.jpg'
+import nursing from '../../assets/medicine.jpg'
 import image6 from '../../assets/hats.jpg'
 import image7 from '../../assets/morning.jpg'
 import GridList from '../../components/GridList/GridList'
 
 const tileData = [
     {
-        img: image,
+        img: medicine,
         name: 'medicine',
         title: 'Medicina',
         author: 'author',
     },
     {
-        img: image7,
+        img: nursing,
         name: 'nursing',
         title: 'Enfermeria',
         author: 'author',
