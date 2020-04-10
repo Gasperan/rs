@@ -12,6 +12,21 @@ import SendIcon from '@material-ui/icons/Send'
 import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import StarBorder from '@material-ui/icons/StarBorder'
+import FolderIcon from '@material-ui/icons/Folder'
+import DeleteIcon from '@material-ui/icons/Delete'
+import AddCircleIcon from '@material-ui/icons/AddCircle'
+import InfoIcon from '@material-ui/icons/Info'
+import EditIcon from '@material-ui/icons/Edit'
+import EventAvailableIcon from '@material-ui/icons/EventAvailable'
+import EventBusyIcon from '@material-ui/icons/EventBusy'
+import { deepOrange, deepPurple, lightGreen } from '@material-ui/core/colors'
+
+import {
+    ListItemAvatar,
+    Avatar,
+    IconButton,
+    ListItemSecondaryAction,
+} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,11 +36,20 @@ const useStyles = makeStyles((theme) => ({
     nested: {
         paddingLeft: theme.spacing(4),
     },
+    orange: {
+        color: theme.palette.getContrastText(deepOrange[500]),
+        backgroundColor: deepOrange[500],
+    },
+    lightGreen: {
+        color: theme.palette.getContrastText(lightGreen[500]),
+        backgroundColor: lightGreen[500],
+    },
 }))
 
 export default function NestedList() {
     const classes = useStyles()
     const [open, setOpen] = React.useState(true)
+    const [secondary, setSecondary] = React.useState(true)
 
     const handleClick = () => {
         setOpen(!open)
@@ -37,16 +61,35 @@ export default function NestedList() {
             aria-labelledby="nested-list-subheader"
             subheader={
                 <ListSubheader component="div" id="nested-list-subheader">
-                    Nested List Items
+                    Horas
                 </ListSubheader>
             }
             className={classes.root}
         >
-            <ListItem button>
-                <ListItemIcon>
-                    <SendIcon />
-                </ListItemIcon>
-                <ListItemText primary="Sent mail" />
+            <ListItem>
+                <ListItemAvatar>
+                    <Avatar className={classes.lightGreen}>
+                        <EventAvailableIcon style={{ color: 'white' }} />
+                    </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                    primary="Single-line item"
+                    secondary={secondary ? 'Secondary text' : null}
+                />
+                <ListItemSecondaryAction>
+                    <IconButton aria-label="delete">
+                        <AddCircleIcon />
+                    </IconButton>
+                    <IconButton aria-label="delete">
+                        <InfoIcon />
+                    </IconButton>
+                    <IconButton aria-label="delete">
+                        <EditIcon />
+                    </IconButton>
+                    <IconButton aria-label="delete">
+                        <DeleteIcon />
+                    </IconButton>
+                </ListItemSecondaryAction>
             </ListItem>
             <ListItem button>
                 <ListItemIcon>
