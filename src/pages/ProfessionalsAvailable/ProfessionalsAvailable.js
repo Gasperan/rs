@@ -12,7 +12,7 @@ const data = {
     medicine: [
         {
             img: image5,
-            name: 'Carlos Albornoz',
+            name: 'medicine/Carlos-Albornoz',
             title: 'Carlos Albornoz',
             author: '12.435.654-8',
         },
