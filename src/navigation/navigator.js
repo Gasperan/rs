@@ -11,3 +11,7 @@ export const navigateToReservations = () => {
 export const navigateToProfile = () => {
     history.push('/profile')
 }
+
+export const navigateToProfessionalsAvailable = (profession) => {
+    history.push(`/${profession}`)
+}

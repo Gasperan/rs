@@ -7,75 +7,15 @@ import GridListTileBar from '@material-ui/core/GridListTileBar'
 import ListSubheader from '@material-ui/core/ListSubheader'
 import IconButton from '@material-ui/core/IconButton'
 import InfoIcon from '@material-ui/icons/Info'
-import image from './assets/bike.jpg'
-import image3 from './assets/breakfast.jpg'
-import image4 from './assets/burgers.jpg'
-import image5 from './assets/camera.jpg'
-import image6 from './assets/hats.jpg'
-import image7 from './assets/morning.jpg'
 import * as navigator from '../../navigation/navigator'
 
-/* * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
-
-const tileData = [
-    {
-        img: image,
-        title: 'Asistente Social',
-        author: 'author',
-    },
-    {
-        img: image7,
-        title: 'Asistente Social',
-        author: 'author',
-    },
-    {
-        img: image3,
-        title: 'Asistente Social',
-        author: 'author',
-    },
-    {
-        img: image4,
-        title: 'Asistente Social',
-        author: 'author',
-    },
-    {
-        img: image5,
-        title: 'Asistente Social',
-        author: 'author',
-    },
-    {
-        img: image6,
-        title: 'Asistente Social',
-        author: 'author',
-    },
-    {
-        img: image7,
-        title: 'Asistente Social',
-        author: 'author',
-    },
-]
-
-const navigateToHome = () => {
-    navigator.navigateToHome()
+const navigateToProfessionalsAvailable = (name) => {
+    navigator.navigateToProfessionalsAvailable(name)
 }
 
 function TitlebarGridList(props) {
-    const { classes } = props
+    //please remove title from here and put in an own component
+    const { classes, data, title } = props
 
     return (
         <div className={classes.root}>
@@ -85,11 +25,17 @@ function TitlebarGridList(props) {
                     cols={2}
                     style={{ height: 'auto' }}
                 >
-                    <ListSubheader component="div">December</ListSubheader>
+                    <ListSubheader component="div" className={classes.header}>
+                        {title}
+                    </ListSubheader>
                 </GridListTile>
-                {tileData.map((tile) => (
+                {data.map((tile) => (
                     <GridListTile key={tile.img}>
-                        <div onClick={navigateToHome}>
+                        <div
+                            onClick={() =>
+                                navigateToProfessionalsAvailable(tile.name)
+                            }
+                        >
                             <img src={tile.img} alt={tile.title} />
                             <GridListTileBar
                                 title={tile.title}
@@ -122,6 +68,9 @@ const styles = (theme) => ({
     },
     icon: {
         color: 'rgba(255, 255, 255, 0.54)',
+    },
+    header: {
+        fontColor: 'red',
     },
 })
 
