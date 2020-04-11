@@ -15,6 +15,32 @@ const data = {
             name: 'medicine/Carlos-Albornoz',
             title: 'Carlos Albornoz',
             author: '12.435.654-8',
+            appoiments: [
+                {
+                    startTime: '11:00',
+                    finishTime: '11:20',
+                    patient: {
+                        name: 'Juan Perez',
+                        rut: '11.456.098-k',
+                    },
+                },
+                {
+                    startTime: '11:20',
+                    finishTime: '11:40',
+                    patient: {
+                        name: 'Rodrigo Mondaca',
+                        rut: '7.256.369-9',
+                    },
+                },
+                {
+                    startTime: '11:40',
+                    finishTime: '12:00',
+                    patient: {
+                        name: 'Camila Segovia',
+                        rut: '10.789.456-k',
+                    },
+                },
+            ],
         },
         {
             img: image5,

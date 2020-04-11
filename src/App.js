@@ -15,59 +15,57 @@ import history from './navigation/routes'
 export default class App extends Component {
     render() {
         return (
-            <Router history={history}>
-                <div style={styles.bla}>
+            <div style={styles.bla}>
+                <Router history={history}>
                     <MyAppBar
                         title="Sistema de reservas - Recetando Sonrisas"
                         style={styles.text}
                     />
-                    <div style={styles.main}>
-                        <Switch>
-                            <Route
-                                exact
-                                path="/reservations"
-                                strict
-                                component={AvailableServices}
-                            />
-                            <Route exact path="/" component={NotReadyYet} />
-                            <Route path="/profile" component={NotReadyYet} />
-                            <Route
-                                exact
-                                path="/medicine"
-                                strict
-                                component={ProfessionalsAvailable}
-                            />
+                    <Switch>
+                        <Route
+                            exact
+                            path="/reservations"
+                            strict
+                            component={AvailableServices}
+                        />
+                        <Route exact path="/" component={NotReadyYet} />
+                        <Route path="/profile" component={NotReadyYet} />
+                        <Route
+                            exact
+                            path="/medicine"
+                            strict
+                            component={ProfessionalsAvailable}
+                        />
 
-                            <Route
-                                exact
-                                path="/nursing"
-                                strict
-                                component={ProfessionalsAvailable}
-                            />
-                            <Route
-                                exact
-                                path="/odontology"
-                                strict
-                                component={ProfessionalsAvailable}
-                            />
-                            <Route
-                                exact
-                                path="/medicine/carlos-albornoz"
-                                strict
-                                component={ProfesionalReservationList}
-                            />
+                        <Route
+                            exact
+                            path="/nursing"
+                            strict
+                            component={ProfessionalsAvailable}
+                        />
+                        <Route
+                            exact
+                            path="/odontology"
+                            strict
+                            component={ProfessionalsAvailable}
+                        />
+                        <Route
+                            exact
+                            path="/medicine/carlos-albornoz"
+                            strict
+                            component={ProfesionalReservationList}
+                        />
 
-                            <Route
-                                path="*"
-                                strict
-                                exact={true}
-                                component={NotFound}
-                            />
-                        </Switch>
-                    </div>
+                        <Route
+                            path="*"
+                            strict
+                            exact={true}
+                            component={NotFound}
+                        />
+                    </Switch>
                     <BottomNav style={styles.bottom} />
-                </div>
-            </Router>
+                </Router>
+            </div>
         )
     }
 }
